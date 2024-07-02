@@ -33,25 +33,25 @@ const PasswordGenerator = () => {
 
   const themes = {
     default: '',
-    bird: ['Eagle', 'Sparrow', 'Robin', 'Falcon', 'Parrot', 'Eagle123!','Sparrow@2023','Falcon#Power','Hawk$Force2024','Owl*W1sdom!','Raven&Str0ngP@ss','Condor!Secur1ty','Osprey@2Secure','Phoenix#2025Pass','Vulture$Strong!'],
-    country: ['Canada', 'India', 'France', 'Brazil', 'Japan','Canada2023!','India$Secur3','France#2024P@ss','Brazil&Auth3ntic','Japan*Safe2025','Germany!Protected','Australia@2026','Russia#3ncrypt!','Italy*Secur!ty20','Spain&2027Saf3','China!P@ss2028','Egypt@1S3cur3','Greece#2029!Safe','Argentina$Strong2!'],
-    name: ['Alice', 'Bob', 'Charlie', 'Diana', 'Edward','Ananya@2023Pass','Bhavya#S3cure!','Chirag*2024Pass','Devika$Str0ng!','Esha!Saf3@2025','Farhan#2026P@ss','Gaurav&Auth3ntic','Hina*Secur3!','Ishan$P@ssword20','Janvi#2027!','Karthik@Saf3&2028','Lavanya!Str0ng2!','Mihir#2029P@ss','Naina$Auth3nt1c','Omkar@2030S3cure'],
-    easy: ['password', '123456', 'abcdef', 'letmein', 'welcome','password@2023!','123456#Secur3','abcdef*2024P@ss','letmein$Str0ng!','welcome!2025Saf3','qwerty#Secur3!','monkey*2026P@ss','iloveyou$Str0ng!','sunshine!2027Saf3','chocolate#Secur3!','football*2028P@ss','baseball$Str0ng!','security!2029Saf3','dragon#P@ssword20','freedom$20230!'],
+    bird: ['Eagle123!', 'Sparrow@2023', 'Falcon#Power', 'Hawk$Force2024', 'Owl*W1sdom!', 'Raven&Str0ngP@ss', 'Condor!Secur1ty', 'Osprey@2Secure', 'Phoenix#2025Pass', 'Vulture$Strong!'],
+    country: ['Canada2023!', 'India$Secur3', 'France#2024P@ss', 'Brazil&Auth3ntic', 'Japan*Safe2025', 'Germany!Protected', 'Australia@2026', 'Russia#3ncrypt!', 'Italy*Secur!ty20', 'Spain&2027Saf3', 'China!P@ss2028', 'Egypt@1S3cur3', 'Greece#2029!Safe', 'Argentina$Strong2!'],
+    name: ['Ananya@2023Pass', 'Bhavya#S3cure!', 'Chirag*2024Pass', 'Devika$Str0ng!', 'Esha!Saf3@2025', 'Farhan#2026P@ss', 'Gaurav&Auth3ntic', 'Hina*Secur3!', 'Ishan$P@ssword20', 'Janvi#2027!', 'Karthik@Saf3&2028', 'Lavanya!Str0ng2!', 'Mihir#2029P@ss', 'Naina$Auth3nt1c', 'Omkar@2030S3cure'],
+    easy: ['password@2023!', '123456#Secur3', 'abcdef*2024P@ss', 'letmein$Str0ng!', 'welcome!2025Saf3', 'qwerty#Secur3!', 'monkey*2026P@ss', 'iloveyou$Str0ng!', 'sunshine!2027Saf3', 'chocolate#Secur3!', 'football*2028P@ss', 'baseball$Str0ng!', 'security!2029Saf3', 'dragon#P@ssword20', 'freedom$20230!'],
   };
 
   const generatePassword = () => {
     let generatedPassword = '';
-    let generatedLength = Math.floor(Math.random() * 9) + 8; // Random length between 8 to 16 characters
 
-    const upperCaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz';
-    const numbers = '0123456789';
-    const symbols = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
-
-    let characterSet = '';
     if (theme !== 'default' && themes[theme]) {
-      characterSet = themes[theme][Math.floor(Math.random() * themes[theme].length)];
+      generatedPassword = themes[theme][Math.floor(Math.random() * themes[theme].length)];
     } else {
+      let generatedLength = Math.floor(Math.random() * 9) + 8; // Random length between 8 to 16 characters
+      const upperCaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz';
+      const numbers = '0123456789';
+      const symbols = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
+
+      let characterSet = '';
       if (includeUppercase) characterSet += upperCaseLetters;
       if (includeLowercase) characterSet += lowerCaseLetters;
       if (includeNumbers) characterSet += numbers;
