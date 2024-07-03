@@ -124,7 +124,7 @@ const PasswordGenerator = () => {
           <option value="easy">Easy</option>
         </Select>
       </Stack>
-      <Stack direction="row" spacing={4} align="center" mb={4}>
+      <Stack direction={{ base: 'column', md: 'row' }} spacing={4} align="center" mb={4}>
         <InputGroup>
           <Input
             type={visible ? 'text' : 'password'}
@@ -135,6 +135,7 @@ const PasswordGenerator = () => {
             borderColor="gray.300"
             bg="gray.100"
             color="gray.800"
+            w={{ base: '100%', md: 'auto' }}
           />
           <InputRightElement width="4.5rem">
             <IconButton
@@ -148,7 +149,12 @@ const PasswordGenerator = () => {
             />
           </InputRightElement>
         </InputGroup>
-        <Button onClick={generatePassword} colorScheme={colorMode === 'dark' ? 'teal' : 'blue'}>
+        <Button
+          onClick={generatePassword}
+          colorScheme={colorMode === 'dark' ? 'teal' : 'blue'}
+          w={{ base: '100%', md: 'auto' }}
+          size={{ base: 'lg', md: 'md' }}
+        >
           Generate Password
         </Button>
       </Stack>
